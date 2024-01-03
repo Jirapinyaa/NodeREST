@@ -50,7 +50,7 @@ app.put('/books/:id', (req, res) => {
     res.send(book);
 });
 
-app.delete('/books/:id', (req,res) => {
+app.delete('/book/:id', (req,res) => {
     const book = books.find(b => b.id === parseInt(req.params.id));
     if (!book) res.status(404).send('Book not found');
     const index = books.indexOf(book);
@@ -59,6 +59,4 @@ app.delete('/books/:id', (req,res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+app.listen(port, () => console.log(`Example app Listening on port ${port}...`));
