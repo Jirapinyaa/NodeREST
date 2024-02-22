@@ -41,7 +41,7 @@ app.post("/books", async (req,res) => {
     }
 });
 
-app.emit("/books", async (req,res) => {
+app.get("/books", async (req,res) => {
     try {
         const books = await Book.find();
         res.send(books);
